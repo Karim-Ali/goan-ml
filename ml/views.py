@@ -16,7 +16,7 @@ import numpy as np
 # Create your views here.
 
 
-@api_view(["GET"])
+@api_view(["POST"])
 #my fun
 def recommend(data):
 
@@ -54,7 +54,7 @@ def recommend(data):
 
         return Response(e.args[0],status.HTTP_400_BAD_REQUEST)
 
-@api_view(["GET"])
+@api_view(["POST"])
 def predictCan(data):
 
     try:
