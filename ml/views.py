@@ -80,13 +80,13 @@ def predictCan(data):
         
         #pridictor = Cancelation_Pridictor()
         #response = pridictor.pridict(transaction)
-        model = pickle.load(open("ml/models/cancelation_pridictor_model.sav", 'rb'))
+        #model = pickle.load(open("ml/models/cancelation_pridictor_model.sav", 'rb'))
         #transaction[5] = (ord(transaction[5])-64)
         #x = np.column_stack((transaction))
-        
+        x = transaction[0]+transaction[1]+transaction[2]+transaction[3]+transaction[4]
         #result = model.predict(x)
         #result = result.tolist()
-        pridicted = {"is_canceled" :5}
+        pridicted = {"is_canceled" :(x%2)}
         #pridicted = json.dumps(pridicted)
         
         return JsonResponse(pridicted,safe=False)
